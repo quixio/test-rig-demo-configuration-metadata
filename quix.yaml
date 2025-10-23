@@ -152,7 +152,32 @@ deployments:
         label: Test Manager
         icon: tune
         order: 1
-
+  - name: InfluxDB v1
+    image: influxdb:1.11.8
+    deploymentType: Service
+    resources:
+      cpu: 200
+      memory: 500
+      replicas: 1
+    publicAccess:
+      enabled: true
+      urlPrefix: influxdb
+    network:
+      serviceName: influxdb
+      ports:
+        - port: 8086
+          targetPort: 8086
+        - port: 80
+          targetPort: 8086
+    variables:
+      - name: INFLUXDB_ADMIN_USER
+        inputType: Secret
+        required: true
+        secretKey: INFLUXDB_USER
+      - name: INFLUXDB_ADMIN_PASSWORD
+        inputType: Secret
+        required: true
+        secretKey: INFLUXDB_PASSWORD
 # This section describes the Topics of the data pipeline
 topics:
   - name: config-updates
