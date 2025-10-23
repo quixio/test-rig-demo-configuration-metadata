@@ -152,7 +152,30 @@ deployments:
         label: Test Manager
         icon: tune
         order: 1
-
+  - name: mongodb
+    application: mongodb
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 200
+      memory: 500
+      replicas: 1
+    network:
+      serviceName: mongodb
+      ports:
+        - port: 27017
+          targetPort: 27017
+    variables:
+      - name: MONGO_INITDB_ROOT_USERNAME
+        inputType: Secret
+        description: The root username to initialize MongoDB with
+        required: true
+        secretKey: MONGO_USER
+      - name: MONGO_INITDB_ROOT_PASSWORD
+        inputType: Secret
+        description: The root password to initialize MongoDB with
+        required: true
+        secretKey: MONGO_PASSWORD
 # This section describes the Topics of the data pipeline
 topics:
   - name: config-updates
