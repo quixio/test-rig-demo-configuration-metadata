@@ -10,13 +10,13 @@ def get_api_url() -> str:
     return os.environ.get("Testmanager__Api__Url", "http://localhost:8080")
 
 def get_lake_query_ui_url() -> str:
-    url =  os.environ.get("Testmanager__Lake__Query__Ui__Url", "https://query-ui-quixers-testmanagerdemo-dev.az-france-0.app.quix.io")
+    url =  os.environ.get("Testmanager__Lake__Query__Ui__Url", "https://query-ui-quixers-testrigdemodatawarehouse-prod.az-france-0.app.quix.io")
     if url.endswith("/"):
         return url.removesuffix("/")
     return url
 
 def get_marimo_url() -> str:
-    url =  os.environ.get("Testmanager__Marimo__Url", "https://simplemarimo-c42ffa5-quixers-advanceanalyticsdemo-main.az-france-0.app.quix.io")
+    url =  os.environ.get("Testmanager__Marimo__Url", "not_defined.com")
     if url.endswith("/"):
         return url.removesuffix("/")
     return url
