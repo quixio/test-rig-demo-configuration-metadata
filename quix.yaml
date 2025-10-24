@@ -124,7 +124,7 @@ deployments:
       - name: Testmanager__Api__Url
         inputType: FreeText
         description: Test Manager API URL.
-        value: https://backend-quixers-testmanagerdemo-dev.az-france-0.app.quix.io/
+        value: https://backend-quixers-testrigdemoconfigurationmet-5f306d01.az-france-0.app.quix.io/
       - name: Testmanager__Host
         inputType: FreeText
         description: UI server host.
