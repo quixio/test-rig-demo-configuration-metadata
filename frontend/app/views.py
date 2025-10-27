@@ -56,7 +56,7 @@ def get_external_links(test_id: str, campaign_id: str, environment_id: str) -> l
         (f"https://portal.cloud.quix.io/pipeline/deployments/4ba8a3b7-aa55-4f17-8d35-d51b839d9e47/embedded?workspace=quixers-testrigdemoconfigurationmet-5f306d01{stream_id}", "Configuration Manager"),
         (f"https://portal.cloud.quix.io/data?workspace=quixers-testrigdemomeasurementdata-prod{lake_querystring}", "Data Lake"),
         (f"{get_lake_query_ui_url()}{lake_sql_editor_querystring}", "Data Query"),
-        # (f"https://marimo-analysis-quixers-advanceanalyticsdemo-main.az-france-0.app.quix.io/{marimo_querystring}", "Notebook"),
+        (f"https://marimo-analysis-quixers-testrigdemoadvancedanalytics-prod.az-france-0.app.quix.io/{marimo_querystring}", "Notebook"),
     ]
 
 def _filter_tests(tests: list[Test], filters: dict[str, Any]) -> list[Test]:
